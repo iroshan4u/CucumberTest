@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="C:\\Users\\Iroshan\\eclipse-workspace\\Cucumber\\src\\test\\java\\featurespkg", 
-glue={"stepsdefinitionpkg"}, tags="@integration")
+glue={"stepsdefinitionpkg"}, tags="@@regression")
 
 public class Testrunner {
 
