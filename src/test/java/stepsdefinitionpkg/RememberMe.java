@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class RememberMe {
 
@@ -14,7 +15,8 @@ public class RememberMe {
 	
 	@Given("User must be on homepage by clicking on url {string}")
 	public void user_must_be_on_homepage_by_clicking_on_url(String string) {
-		System.setProperty("webdrive.chrome.driver", "chromedriver.exe");
+		//System.setProperty("webdrive.chrome.driver", "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get(string);
 		driver.manage().window().maximize();

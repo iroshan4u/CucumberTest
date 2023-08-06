@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Login {
 
@@ -15,8 +16,10 @@ public class Login {
 	
 	@Given("User must be on homepage by clicking url {string}")
 	public void user_must_be_on_homepage_by_clicking_on_url(String url) {
-	    System.setProperty("webdrive.chrome.driver", "chromedriver.exe");
-	    driver = new ChromeDriver();
+	    //System.setProperty("webdrive.chrome.driver", "chromedriver.exe");
+	    WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		
 	    driver.get(url);
 	    driver.manage().window().maximize();
 	}
